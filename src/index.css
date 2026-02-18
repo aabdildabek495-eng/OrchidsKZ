@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 30% 97%;
+    --foreground: 150 15% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 15% 12%;
+
+    --primary: 148 55% 24%;
+    --primary-foreground: 45 30% 97%;
+
+    --secondary: 145 20% 90%;
+    --secondary-foreground: 148 40% 18%;
+
+    --muted: 140 15% 93%;
+    --muted-foreground: 148 10% 45%;
+
+    --accent: 275 30% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 145 18% 86%;
+    --input: 145 18% 86%;
+    --ring: 148 55% 24%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 148 20% 96%;
+    --sidebar-foreground: 148 10% 25%;
+    --sidebar-primary: 148 55% 24%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 145 15% 92%;
+    --sidebar-accent-foreground: 148 40% 18%;
+    --sidebar-border: 145 18% 88%;
+    --sidebar-ring: 148 55% 24%;
+
+    /* Custom botanical tokens */
+    --botanical-cream: 40 40% 95%;
+    --botanical-sage: 145 25% 82%;
+    --botanical-moss: 148 40% 32%;
+    --botanical-orchid: 275 30% 60%;
+    --botanical-orchid-light: 275 35% 92%;
+    --botanical-gold: 42 80% 55%;
+    --hero-gradient: linear-gradient(135deg, hsl(148 55% 18%), hsl(148 45% 28%), hsl(160 40% 22%));
+    --card-hover-shadow: 0 12px 40px -12px hsl(148 55% 24% / 0.15);
+  }
+
+  .dark {
+    --background: 150 15% 8%;
+    --foreground: 45 20% 92%;
+
+    --card: 150 12% 12%;
+    --card-foreground: 45 20% 92%;
+
+    --popover: 150 12% 12%;
+    --popover-foreground: 45 20% 92%;
+
+    --primary: 148 45% 50%;
+    --primary-foreground: 150 15% 8%;
+
+    --secondary: 148 20% 18%;
+    --secondary-foreground: 45 20% 92%;
+
+    --muted: 148 15% 16%;
+    --muted-foreground: 145 12% 55%;
+
+    --accent: 275 35% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 148 12% 20%;
+    --input: 148 12% 20%;
+    --ring: 148 45% 50%;
+
+    --sidebar-background: 150 12% 10%;
+    --sidebar-foreground: 45 15% 90%;
+    --sidebar-primary: 148 45% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 148 12% 16%;
+    --sidebar-accent-foreground: 45 15% 90%;
+    --sidebar-border: 148 12% 18%;
+    --sidebar-ring: 148 45% 50%;
+
+    --botanical-cream: 40 10% 15%;
+    --botanical-sage: 145 15% 25%;
+    --botanical-moss: 148 35% 45%;
+    --botanical-orchid: 275 35% 55%;
+    --botanical-orchid-light: 275 20% 18%;
+    --botanical-gold: 42 70% 50%;
+    --hero-gradient: linear-gradient(135deg, hsl(150 20% 6%), hsl(148 30% 12%), hsl(160 25% 10%));
+    --card-hover-shadow: 0 12px 40px -12px hsl(148 45% 50% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+
+  .botanical-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .botanical-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow);
+  }
+
+  .orchid-accent {
+    color: hsl(var(--botanical-orchid));
+  }
+
+  .bg-orchid-light {
+    background-color: hsl(var(--botanical-orchid-light));
+  }
+
+  .bg-botanical-cream {
+    background-color: hsl(var(--botanical-cream));
+  }
+
+  .bg-botanical-sage {
+    background-color: hsl(var(--botanical-sage));
+  }
+
+  .text-botanical-gold {
+    color: hsl(var(--botanical-gold));
+  }
+}
